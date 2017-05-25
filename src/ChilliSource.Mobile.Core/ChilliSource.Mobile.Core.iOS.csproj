@@ -1,35 +1,44 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A0DA2E81-65C4-4288-8BEF-EC39A9D28198}</ProjectGuid>
+    <ProjectGuid>{140CFD73-14ED-46AB-81F7-68C5A381A68D}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>ChilliSource.Mobile.Core</RootNamespace>
-    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>ChilliSource.Mobile.Core</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\Xamarin.iOS10\</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
+    <DefineConstants>DEBUG;__IOS__</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchProfiling>true</MtouchProfiling>
+    <IOSDebuggerPort>37045</IOSDebuggerPort>
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>full</DebugType>
+    <DebugType></DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\Xamarin.iOS10\</OutputPath>
+    <DefineConstants>__IOS__</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-    <DocumentationFile>bin\Release\Xamarin.iOS10\ChilliSource.Mobile.Core.xml</DocumentationFile>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -41,34 +50,6 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\Annotations.cs" />
-    <Compile Include="Attributes\Description.cs" />
-    <Compile Include="Contracts\IActivityIndicator.cs" />
-    <Compile Include="Contracts\IEnvironmentInformation.cs" />
-    <Compile Include="Contracts\ILogger.cs" />
-    <Compile Include="DataStructures\ObservableRangeCollection.cs" />
-    <Compile Include="DataStructures\Optionals\ActionExtensions.cs" />
-    <Compile Include="DataStructures\Optionals\IOptional.cs" />
-    <Compile Include="DataStructures\Optionals\None.cs" />
-    <Compile Include="DataStructures\Optionals\Option.cs" />
-    <Compile Include="DataStructures\Optionals\OptionExtensions.cs" />
-    <Compile Include="DataStructures\Optionals\Some.cs" />
-    <Compile Include="DataStructures\Optionals\SomeExtensions.cs" />
-    <Compile Include="DataStructures\Optionals\Unit.cs" />
-    <Compile Include="Entities\EnvironmentInformation.cs" />
-    <Compile Include="Entities\ObservableObject.cs" />
-    <Compile Include="Entities\Results\IOperationResult.cs" />
-    <Compile Include="Entities\Results\IServiceResult.cs" />
-    <Compile Include="Entities\Results\OperationResult.cs" />
-    <Compile Include="Entities\Results\OperationResultAsyncExtensions.cs" />
-    <Compile Include="Entities\Results\OperationResultExtensions.cs" />
-    <Compile Include="Entities\Results\ServiceResult.cs" />
-    <Compile Include="Entities\Results\ServiceResultAsyncExtensions.cs" />
-    <Compile Include="Entities\Results\ServiceResultExtensions.cs" />
-    <Compile Include="Enums\Orientation.cs" />
-    <Compile Include="Factories\FilePathFactory.cs" />
-    <Compile Include="Managers\FileSystemManager.cs" />
-    <Compile Include="Platforms\iOS\Extensions\NSDictionaryExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

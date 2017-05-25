@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.6;net462</TargetFrameworks>
+    <TargetFrameworks>net461;net462</TargetFrameworks>
     <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
     <AssemblyName>ChilliSource.Mobile.Core</AssemblyName>
     <RootNamespace>ChilliSource.Mobile.Core</RootNamespace>

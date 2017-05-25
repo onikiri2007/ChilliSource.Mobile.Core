@@ -43,6 +43,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
+    <Reference Include="ChilliSource.Core.Extensions">
+      <HintPath>..\packages\ChilliSource.Core.Extensions.1.0.0\lib\netstandard1.6\ChilliSource.Core.Extensions.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\Annotations.cs" />
@@ -77,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
