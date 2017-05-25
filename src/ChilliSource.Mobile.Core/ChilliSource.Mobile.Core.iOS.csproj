@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>Xamarin.iOS10</TargetFramework>
+    <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <DefineConstants>TRACE;DEBUG;XAMARINIOS1_0;__IOS__</DefineConstants>
+    <DebugType>full</DebugType>
+    <AssemblyName>ChilliSource.Mobile.Core</AssemblyName>
+    <RootNamespace>ChilliSource.Mobile.Core.iOS</RootNamespace>
+    <Description>Core library for ChilliSource.Mobile</Description>
+    <Company>Blue Chilli Technology Pty Ltd</Company>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
+    <RepositoryUrl>https://github.com/BlueChilli/ChilliSource.Mobile.Core</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/BlueChilli/ChilliSource.Mobile.Core/blob/master/LICENSE</PackageLicenseUrl>
+    <Authors>Blue Chilli Technology</Authors>
+    <SourceLinkUrl>https://github.com/BlueChilli/ChilliSource.Mobile.Core/</SourceLinkUrl>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+    <GenerateAssemblyCopyRightAttribute>false</GenerateAssemblyCopyRightAttribute>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\Xamarin.iOS10\ChilliSource.Mobile.Core.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="obj\**" />
+    <Compile Remove="Resources\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <EmbeddedResource Remove="Resources\**" />
+    <None Remove="obj\**" />
+    <None Remove="Resources\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="dotnet-sourcelink" Version="2.0.2" />
+    <DotNetCliToolReference Include="dotnet-sourcelink-git" Version="2.0.2" />
+    <PackageReference Include="ChilliSource.Core.Extensions" Version="1.0.0" />
+    <PackageReference Include="SourceLink.Create.GitHub" Version="2.1.2" PrivateAssets="all" />
+  </ItemGroup>
+</Project>

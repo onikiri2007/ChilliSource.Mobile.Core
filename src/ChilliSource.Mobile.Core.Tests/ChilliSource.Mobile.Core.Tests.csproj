@@ -16,15 +16,14 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
   </ItemGroup>
 
- <ItemGroup>
-    <ProjectReference Include="..\ChilliSource.Mobile.Core\ChilliSource.Mobile.Core.csproj" />
-  </ItemGroup>
-
   <ItemGroup>
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="OperationResultTests.cs" />
     <Compile Include="ServiceResultTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChilliSource.Mobile.Core\ChilliSource.Mobile.Core.csproj" />
   </ItemGroup>
 </Project>

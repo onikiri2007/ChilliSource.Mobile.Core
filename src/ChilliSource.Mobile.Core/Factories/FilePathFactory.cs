@@ -8,8 +8,7 @@ See the LICENSE file in the project root for more information.
 
 #endregion
 
-#if !__NETSTANDARD__
-
+#if __IOS__ || __ANDROID__
 using System;
 using System.IO;
 
@@ -66,4 +65,5 @@ namespace ChilliSource.Mobile.Core
 
 	}
 }
+
 #endif
