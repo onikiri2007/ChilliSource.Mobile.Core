@@ -1,61 +1,95 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <TargetFrameworks>monoandroid403;netstandard1.6;</TargetFrameworks>
-    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
-    <TargetFrameworkIdentifier>MonoAndroid</TargetFrameworkIdentifier>
-    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
-    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
-    <DebugType>full</DebugType>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F132E3CA-31B8-4090-9D1C-13FF3103B8AB}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChilliSource.Mobile.Core</RootNamespace>
     <AssemblyName>ChilliSource.Mobile.Core</AssemblyName>
-    <RootNamespace>ChilliSource.Mobile.Core.Android</RootNamespace>
-    <Description>Core library for ChilliSource.Mobile</Description>
-    <Company>Blue Chilli Technology Pty Ltd</Company>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
-    <FileVersion>1.0.0</FileVersion>
-    <RepositoryUrl>https://github.com/BlueChilli/ChilliSource.Mobile.Core</RepositoryUrl>
-    <PackageLicenseUrl>https://github.com/BlueChilli/ChilliSource.Mobile.Core/blob/master/LICENSE</PackageLicenseUrl>
-    <Authors>Blue Chilli Technology</Authors>
-    <SourceLinkUrl>https://github.com/BlueChilli/ChilliSource.Mobile.Core/</SourceLinkUrl>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
-    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
-    <GenerateAssemblyCopyRightAttribute>false</GenerateAssemblyCopyRightAttribute>
-    <DefineConstants>TRACE;DEBUG;__ANDROID__;MONOANDROID7_0</DefineConstants>
+    <FileAlignment>512</FileAlignment>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|monoandroid403|AnyCPU'">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\monodroid403\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\monoandroid403\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\monoandroid403\ChilliSource.Mobile.Core.xml</DocumentationFile>
   </PropertyGroup>
-
   <ItemGroup>
-    <Compile Remove="Platforms\iOS\**" />
-    <EmbeddedResource Remove="Platforms\iOS\**" />
-    <None Remove="Platforms\iOS\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="..\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Java.Interop" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
     <Reference Include="System" />
-    <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-  </ItemGroup>
- 
-  <ItemGroup>
-    <DotNetCliToolReference Include="dotnet-sourcelink" Version="2.0.2" />
-    <DotNetCliToolReference Include="dotnet-sourcelink-git" Version="2.0.2" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ChilliSource.Core.Extensions" Version="1.0.0" />
-    <PackageReference Include="SourceLink.Create.GitHub" Version="2.1.2" />
+    <Compile Include="Attributes\Annotations.cs" />
+    <Compile Include="Attributes\Description.cs" />
+    <Compile Include="Contracts\IActivityIndicator.cs" />
+    <Compile Include="Contracts\IEnvironmentInformation.cs" />
+    <Compile Include="Contracts\ILogger.cs" />
+    <Compile Include="DataStructures\ObservableRangeCollection.cs" />
+    <Compile Include="DataStructures\Optionals\ActionExtensions.cs" />
+    <Compile Include="DataStructures\Optionals\IOptional.cs" />
+    <Compile Include="DataStructures\Optionals\None.cs" />
+    <Compile Include="DataStructures\Optionals\Option.cs" />
+    <Compile Include="DataStructures\Optionals\OptionExtensions.cs" />
+    <Compile Include="DataStructures\Optionals\Some.cs" />
+    <Compile Include="DataStructures\Optionals\SomeExtensions.cs" />
+    <Compile Include="DataStructures\Optionals\Unit.cs" />
+    <Compile Include="Entities\EnvironmentInformation.cs" />
+    <Compile Include="Entities\ObservableObject.cs" />
+    <Compile Include="Entities\Results\IOperationResult.cs" />
+    <Compile Include="Entities\Results\IServiceResult.cs" />
+    <Compile Include="Entities\Results\OperationResult.cs" />
+    <Compile Include="Entities\Results\OperationResultAsyncExtensions.cs" />
+    <Compile Include="Entities\Results\OperationResultExtensions.cs" />
+    <Compile Include="Entities\Results\ServiceResult.cs" />
+    <Compile Include="Entities\Results\ServiceResultAsyncExtensions.cs" />
+    <Compile Include="Entities\Results\ServiceResultExtensions.cs" />
+    <Compile Include="Enums\Orientation.cs" />
+    <Compile Include="Factories\FilePathFactory.cs" />
+    <Compile Include="Managers\FileSystemManager.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Platforms\" />
+    <None Include="Resources\AboutResources.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Platforms\Android\Extensions\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

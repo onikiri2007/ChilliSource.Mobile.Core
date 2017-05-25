@@ -19,8 +19,8 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
     <GenerateAssemblyCopyRightAttribute>false</GenerateAssemblyCopyRightAttribute>
+    <BaseIntermediateOutputPath>obj_core\</BaseIntermediateOutputPath>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.6|AnyCPU'">
     <DocumentationFile>bin\Release\netstandard1.6\ChilliSource.Mobile.Core.xml</DocumentationFile>
   </PropertyGroup>

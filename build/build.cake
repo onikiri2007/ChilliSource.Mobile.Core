@@ -128,7 +128,7 @@ Action NonMacOSAbort = () => { throw new Exception("Running on platforms other m
 
 Action<string> RestorePackages = (solution) =>
 {
-    DotNetCoreRestore(solution);
+    NuGetRestore(solution);
 	
 };
 
