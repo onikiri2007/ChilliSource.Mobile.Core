@@ -37,7 +37,7 @@ _ReSharper*/
 edge
 node_modules
 .vs
-
+obj_core
 # Don't include NuGet Packages
 packages/
 RequestReduceContent/
