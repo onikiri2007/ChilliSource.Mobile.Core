@@ -1,99 +1,52 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NuGet.Build.Packaging.0.1.248\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.248\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F132E3CA-31B8-4090-9D1C-13FF3103B8AB}</ProjectGuid>
+    <ProjectGuid>{A98005BD-8B08-4BC5-B81D-F0D965E1BAE2}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ChilliSource.Mobile.Core</RootNamespace>
     <AssemblyName>ChilliSource.Mobile.Core</AssemblyName>
-    <FileAlignment>512</FileAlignment>
-    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
-    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\monodroid403\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\monoandroid403\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\monoandroid403\ChilliSource.Mobile.Core.xml</DocumentationFile>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Mono.Android" />
-    <Reference Include="mscorlib" />
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
-    <Reference Include="ChilliSource.Core.Extensions">
-      <HintPath>..\packages\ChilliSource.Core.Extensions.1.0.0\lib\netstandard1.6\ChilliSource.Core.Extensions.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\Annotations.cs" />
-    <Compile Include="Attributes\Description.cs" />
-    <Compile Include="Contracts\IActivityIndicator.cs" />
-    <Compile Include="Contracts\IEnvironmentInformation.cs" />
-    <Compile Include="Contracts\ILogger.cs" />
-    <Compile Include="DataStructures\ObservableRangeCollection.cs" />
-    <Compile Include="DataStructures\Optionals\ActionExtensions.cs" />
-    <Compile Include="DataStructures\Optionals\IOptional.cs" />
-    <Compile Include="DataStructures\Optionals\None.cs" />
-    <Compile Include="DataStructures\Optionals\Option.cs" />
-    <Compile Include="DataStructures\Optionals\OptionExtensions.cs" />
-    <Compile Include="DataStructures\Optionals\Some.cs" />
-    <Compile Include="DataStructures\Optionals\SomeExtensions.cs" />
-    <Compile Include="DataStructures\Optionals\Unit.cs" />
-    <Compile Include="Entities\EnvironmentInformation.cs" />
-    <Compile Include="Entities\ObservableObject.cs" />
-    <Compile Include="Entities\Results\IOperationResult.cs" />
-    <Compile Include="Entities\Results\IServiceResult.cs" />
-    <Compile Include="Entities\Results\OperationResult.cs" />
-    <Compile Include="Entities\Results\OperationResultAsyncExtensions.cs" />
-    <Compile Include="Entities\Results\OperationResultExtensions.cs" />
-    <Compile Include="Entities\Results\ServiceResult.cs" />
-    <Compile Include="Entities\Results\ServiceResultAsyncExtensions.cs" />
-    <Compile Include="Entities\Results\ServiceResultExtensions.cs" />
-    <Compile Include="Enums\Orientation.cs" />
-    <Compile Include="Factories\FilePathFactory.cs" />
-    <Compile Include="Managers\FileSystemManager.cs" />
-    <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AboutResources.txt" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Values\Strings.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Platforms\Android\Extensions\" />
-  </ItemGroup>
+  <Import Project="..\ChilliSource.Mobile.Core1.Shared\ChilliSource.Mobile.Core1.Shared.projitems" Label="Shared" Condition="Exists('..\ChilliSource.Mobile.Core1.Shared\ChilliSource.Mobile.Core1.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <Import Project="..\packages\NuGet.Build.Packaging.0.1.248\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.248\build\NuGet.Build.Packaging.targets')" />
 </Project>
